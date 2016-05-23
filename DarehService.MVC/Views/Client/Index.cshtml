@@ -1,0 +1,17 @@
+﻿@model dynamic
+
+<div ng-app='DarehApp'>
+    <div ng-controller='ClientListController'>
+        <table border="1" ng-repeat="client in clients">
+            <tr>
+                <td>{{client.FirstName}}</td>
+                <td>{{client.Surname}}</td>
+                <td>{{client.Email}}</td>
+                <td>{{client.Phone}}</td>
+                <td>{{client.Id}}</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<script src="~/AngularJS/Controllers/ClientController.js"></script>

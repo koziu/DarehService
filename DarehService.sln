@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DarehService.API", "DarehService\DarehService.API.csproj", "{F527BA99-C1D2-4A35-B5E1-C5500BA7DD3A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DarehService.MVC", "DarehService.MVC\DarehService.MVC.csproj", "{AB518AEA-E3AB-4704-902D-0A689F63096A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F527BA99-C1D2-4A35-B5E1-C5500BA7DD3A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F527BA99-C1D2-4A35-B5E1-C5500BA7DD3A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F527BA99-C1D2-4A35-B5E1-C5500BA7DD3A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F527BA99-C1D2-4A35-B5E1-C5500BA7DD3A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AB518AEA-E3AB-4704-902D-0A689F63096A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB518AEA-E3AB-4704-902D-0A689F63096A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB518AEA-E3AB-4704-902D-0A689F63096A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB518AEA-E3AB-4704-902D-0A689F63096A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
