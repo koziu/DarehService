@@ -8,6 +8,7 @@ using DarehService.API.TestData;
 
 namespace DarehService.API.Controllers
 {
+  [Authorize]
   [EnableCors("*", "*", "*", SupportsCredentials = true)]
   public class ClientController : ApiController
   {
