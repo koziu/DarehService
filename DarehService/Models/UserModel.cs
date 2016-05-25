@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
+using DarehService.API.Models.Enums;
 using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace DarehService.API.Models
@@ -23,5 +24,11 @@ namespace DarehService.API.Models
     [Display(Name = "Confirm password")]
     [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
     public string ConfirmPassword { get; set; }
+
+    public ApplicationTypes ApplicationType { get; set; }
+    public bool Active { get; set; }
+    public int RefreshTokenLifeTime { get; set; }
+    [MaxLength(100)]
+    public string AllowedOrigin { get; set; }
   }
 }

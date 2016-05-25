@@ -3,10 +3,8 @@ using System.ComponentModel.DataAnnotations;
 
 namespace DarehService.API.Models
 {
-  public class Client
+  public class Client : UserModel
   {
-    [Required]
-    public string Id { get; set; }
 
     [Required]
     public string FirstName { get; set; }
@@ -21,12 +19,6 @@ namespace DarehService.API.Models
 
     [Required]
     public Address RegisteredAddress { get; set; }
-
-    [Required]
-    public string Email { get; set; }
-
-    [Required]
-    public string Phone { get; set; }
 
     public DateTime RegisterDate { get; set; }
     public DateTime LastLogOnDate { get; set; }
