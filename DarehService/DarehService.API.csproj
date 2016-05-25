@@ -235,10 +235,12 @@
     <Compile Include="Models\Adress.cs" />
     <Compile Include="Models\Client.cs" />
     <Compile Include="Models\ClientOrders.cs" />
+    <Compile Include="Models\Enums\ApplicationTypes.cs" />
     <Compile Include="Models\Enums\OrderStatus.cs" />
     <Compile Include="Models\Enums\PaymentTypes.cs" />
     <Compile Include="Models\Offer.cs" />
     <Compile Include="Models\Order.cs" />
+    <Compile Include="Models\RefreshToken.cs" />
     <Compile Include="Models\UserModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Provides\DarehAuthorizationServerProvider.cs" />
