@@ -1,9 +1,12 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace DarehService.API.Models
 {
   public class Address
   {
+    [Key]
+    public Guid Id { get; set; }
     [Required]
     public string StreetName { get; set; }
     public string LocalNumber { get; set; }

@@ -14,5 +14,11 @@ namespace DarehService.API.Repositiries.Interfaces
     Task<IdentityResult> RegisterUser(UserModel userModel);
     Task<IdentityUser> FindUser(string userName, string password);
     Task<IdentityUser> FindUserById(string id);
+    Task<bool> AddRefreshToken(RefreshToken refreshToken);
+    Task<bool> RemoveRefreshToken(string refreshTokenId);
+    Task<bool> RemoveRefreshToken(RefreshToken refreshToken);
+    Task<RefreshToken> FindRefreshToken(string refreshTokenId);
+    List<RefreshToken> GetAllRefreshTokens();
+
   }
 }

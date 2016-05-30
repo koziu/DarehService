@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
@@ -52,6 +53,51 @@ namespace DarehService.API.Repositiries
       var user = await _userManager.FindByIdAsync(id);
 
       return user;
+    }
+
+    public async Task<bool> AddRefreshToken(RefreshToken refreshToken)
+    {
+      var existingRefreshToken = await _context.RefreshTokens.SingleOrDefaultAsync(r => r.Subject == refreshToken.Subject && r.ClientId == refreshToken.ClientId);
+      if (existingRefreshToken != null)
+      {
+        var result = await RemoveRefreshToken(existingRefreshToken);
+      }
+
+      _context.RefreshTokens.Add(refreshToken);
+
+      return await _context.SaveChangesAsync() > 0;
+    }
+
+    public async Task<bool> RemoveRefreshToken(string refreshTokenId)
+    {
+      var refreshToken = await _context.RefreshTokens.FindAsync(refreshTokenId);
+
+      if (refreshToken != null)
+      {
+        _context.RefreshTokens.Remove(refreshToken);
+        return await _context.SaveChangesAsync() > 0;
+      }
+
+      return false;
+    }
+
+    public async Task<bool> RemoveRefreshToken(RefreshToken refreshToken)
+    {
+      _context.RefreshTokens.Remove(refreshToken);
+
+      return await _context.SaveChangesAsync() > 0;
+    }
+
+    public async Task<RefreshToken> FindRefreshToken(string refreshTokenId)
+    {
+      var refreshToken = await _context.RefreshTokens.FindAsync(refreshTokenId);
+
+      return refreshToken;
+    }
+
+    public List<RefreshToken> GetAllRefreshTokens()
+    {
+      return _context.RefreshTokens.ToList();
     }
   }
 }

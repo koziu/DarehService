@@ -5,7 +5,6 @@ namespace DarehService.API.Models
 {
   public class Client : UserModel
   {
-
     [Required]
     public string FirstName { get; set; }
 

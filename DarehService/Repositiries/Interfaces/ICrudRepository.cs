@@ -9,11 +9,11 @@ namespace DarehService.API.Repositiries.Interfaces
   public interface ICrudRepository<T> : IDisposable where T : class
   {
     IEnumerable<T> GetAll();
-    T GetById(Guid id);
-    T Get(T entity);
-    void Insert(T entity);
-    void Update(T entity);
-    void Delete(T entity);
-    void SaveChanges();
+    Task<T> GetById(string id);
+    Task<T> Get(T entity);
+    Task<bool> Insert(T entity);
+    Task<bool> Update(T entity);
+    Task<bool> Delete(T entity);
+    Task<bool> SaveChanges();
   }
 }

@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web;
+using DarehService.API.DAL;
 using DarehService.API.Models;
 using DarehService.API.Repositiries.Interfaces;
 
@@ -9,6 +11,12 @@ namespace DarehService.API.Repositiries
 {
   public class ClientRepositoriy : ICrudRepository<Client>
   {
+    private AuthContext _context;
+
+    public ClientRepositoriy()
+    {
+      _context = new AuthContext();
+    }
     public void Dispose()
     {
       throw new NotImplementedException();
@@ -19,32 +27,32 @@ namespace DarehService.API.Repositiries
       return TestData.ClientTestData.Clients;
     }
 
-    public Client GetById(Guid id)
+    public async Task<Client> GetById(string id)
+    {
+      return await _context.Clients.FindAsync(id);
+    }
+
+    public async Task<Client> Get(Client entity)
+    {
+      return await _context.Clients.FindAsync(entity);
+    }
+
+    public Task<bool> Insert(Client entity)
     {
       throw new NotImplementedException();
     }
 
-    public Client Get(Client entity)
+    public Task<bool> Update(Client entity)
     {
       throw new NotImplementedException();
     }
 
-    public void Insert(Client entity)
+    public Task<bool> Delete(Client entity)
     {
       throw new NotImplementedException();
     }
 
-    public void Update(Client entity)
-    {
-      throw new NotImplementedException();
-    }
-
-    public void Delete(Client entity)
-    {
-      throw new NotImplementedException();
-    }
-
-    public void SaveChanges()
+    public Task<bool> SaveChanges()
     {
       throw new NotImplementedException();
     }

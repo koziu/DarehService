@@ -35,8 +35,9 @@ namespace DarehService.API
       {
         AllowInsecureHttp = true,
         TokenEndpointPath = new PathString("/token"),
-        AccessTokenExpireTimeSpan = TimeSpan.FromDays(1),
-        Provider = new DarehAuthorizationServerProvider()
+        AccessTokenExpireTimeSpan = TimeSpan.FromMinutes(30),
+        Provider = new DarehAuthorizationServerProvider(),
+        RefreshTokenProvider = new DarehRefreshTokenProvider()
       };
 
       // Token Generation

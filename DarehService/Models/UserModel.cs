@@ -8,12 +8,8 @@ using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace DarehService.API.Models
 {
-  public class UserModel  : IdentityUser
+  public class UserModel : IdentityUser
   {
-    [Required]
-    [Display(Name = "User name")]
-    public string UserName { get; set; }
-
     [Required]
     [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
     [DataType(DataType.Password)]

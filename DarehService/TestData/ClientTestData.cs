@@ -44,7 +44,7 @@ namespace DarehService.API.TestData
         Email = "koziu92@gmail.com",
         RegisterDate = DateTime.Now,
         LastLogOnDate = DateTime.Now,
-        Phone = "555666999"
+        PhoneNumber = "555666999"
       },
        new Client
       {
@@ -56,7 +56,7 @@ namespace DarehService.API.TestData
         Email = "koziu92@live.com",
         RegisterDate = DateTime.Now,
         LastLogOnDate = DateTime.Now,
-        Phone = "535120399"
+        PhoneNumber = "535120399"
       }
     };
 

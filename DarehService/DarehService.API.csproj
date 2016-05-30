@@ -230,8 +230,19 @@
     <Compile Include="Config\NinjectConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\ClientController.cs" />
+    <Compile Include="Controllers\RefreshTokensController.cs" />
     <Compile Include="Conventers\Interfaces\IConventer.cs" />
     <Compile Include="DAL\AuthContext.cs" />
+    <Compile Include="Helpers\MainHelper.cs" />
+    <Compile Include="Migrations\201605300801010_refreshTokenAdd.cs" />
+    <Compile Include="Migrations\201605300801010_refreshTokenAdd.Designer.cs">
+      <DependentUpon>201605300801010_refreshTokenAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201605300926182_refreshTokenAdd1.cs" />
+    <Compile Include="Migrations\201605300926182_refreshTokenAdd1.Designer.cs">
+      <DependentUpon>201605300926182_refreshTokenAdd1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Adress.cs" />
     <Compile Include="Models\Client.cs" />
     <Compile Include="Models\ClientOrders.cs" />
@@ -244,6 +255,7 @@
     <Compile Include="Models\UserModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Provides\DarehAuthorizationServerProvider.cs" />
+    <Compile Include="Provides\DarehRefreshTokenProvider.cs" />
     <Compile Include="Repositiries\AuthRepository.cs" />
     <Compile Include="Repositiries\ClientRepositoriy.cs" />
     <Compile Include="Repositiries\Interfaces\IAuthRepository.cs" />
@@ -268,6 +280,14 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201605300801010_refreshTokenAdd.resx">
+      <DependentUpon>201605300801010_refreshTokenAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605300926182_refreshTokenAdd1.resx">
+      <DependentUpon>201605300926182_refreshTokenAdd1.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
