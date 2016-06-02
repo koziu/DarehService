@@ -1,31 +1,57 @@
+using System.Collections.Generic;
+using System.Data.Entity.Migrations;
+using System.Linq;
+using DarehService.API.DAL;
+using DarehService.API.Helpers;
+using DarehService.API.Models;
+
 namespace DarehService.API.Migrations
 {
-    using System;
-    using System.Data.Entity;
-    using System.Data.Entity.Migrations;
-    using System.Linq;
-
-    internal sealed class Configuration : DbMigrationsConfiguration<DarehService.API.DAL.AuthContext>
+  internal sealed class Configuration : DbMigrationsConfiguration<AuthContext>
+  {
+    public Configuration()
     {
-        public Configuration()
-        {
-            AutomaticMigrationsEnabled = false;
-        }
-
-        protected override void Seed(DarehService.API.DAL.AuthContext context)
-        {
-            //  This method will be called after migrating to the latest version.
-
-            //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
-            //  to avoid creating duplicate seed data. E.g.
-            //
-            //    context.People.AddOrUpdate(
-            //      p => p.FullName,
-            //      new Person { FullName = "Andrew Peters" },
-            //      new Person { FullName = "Brice Lambson" },
-            //      new Person { FullName = "Rowan Miller" }
-            //    );
-            //
-        }
+      AutomaticMigrationsEnabled = false;
     }
+
+    protected override void Seed(AuthContext context)
+    {
+      if (context.Clients.Any())
+      {
+        return;
+      }
+
+      context.Clients.AddRange(BuildClientList());
+      context.SaveChanges();
+    }
+
+    private IEnumerable<Client> BuildClientList()
+    {
+      var clientsList = new List<Client>
+      {
+        new Client
+        {
+          Id = "ngAuthApp",
+          Secret = MainHelper.GetHash("qwerty@123"),
+          Name = "AngularJS front-end Application",
+          ApplicationType = Models.Enums.ApplicationTypes.JavaScript,
+          Active = true,
+          RefreshTokenLifeTime = 7200,
+          AllowedOrigin = "http://localhost:53988/"
+        },
+        new Client
+        {
+          Id = "consoleApp",
+          Secret = MainHelper.GetHash("123@qwerty"),
+          Name = "Console Application",
+          ApplicationType = Models.Enums.ApplicationTypes.NativeConfidential,
+          Active = true,
+          RefreshTokenLifeTime = 14400,
+          AllowedOrigin = "*"
+        }
+      };
+
+      return clientsList;
+    }
+  }
 }

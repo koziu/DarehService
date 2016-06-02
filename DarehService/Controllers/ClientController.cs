@@ -12,14 +12,14 @@ namespace DarehService.API.Controllers
   [EnableCors("*", "*", "*", SupportsCredentials = true)]
   public class ClientController : ApiController
   {
-    private readonly ICrudRepository<Client> _repository;
+    private readonly ICrudRepository<UserModel> _repository;
 
-    public ClientController(ICrudRepository<Client> repository)
+    public ClientController(ICrudRepository<UserModel> repository)
     {
       _repository = repository;
     }
     // GET: api/Client
-    public IEnumerable<Client> Get()
+    public IEnumerable<UserModel> Get()
     {
       return _repository.GetAll();
     }

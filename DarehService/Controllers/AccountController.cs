@@ -20,14 +20,14 @@ namespace DarehService.API.Controllers
     // POST api/Account/Register
     [AllowAnonymous]
     [Route("Register")]
-    public async Task<IHttpActionResult> Register(UserModel userModel)
+    public async Task<IHttpActionResult> Register(UserModel client)
     {
       if (!ModelState.IsValid)
       {
         return BadRequest(ModelState);
       }
 
-      IdentityResult result = await _repository.RegisterUser(userModel);
+      IdentityResult result = await _repository.RegisterUser(client);
 
       var errorResult = GetErrorResult(result);
 

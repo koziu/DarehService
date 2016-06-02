@@ -94,7 +94,7 @@ namespace DarehService.API.Provides
     {
       string clientId = String.Empty;
       string clientSecret = String.Empty;
-      Task<Client> client = null;
+      Client client = null;
 
       if (!context.TryGetBasicCredentials(out clientId, out clientSecret))
       {
@@ -110,33 +110,33 @@ namespace DarehService.API.Provides
         return Task.FromResult<object>(null);
       }
 
-      using (var _repo = new ClientRepositoriy())
+      using (var _repo = new AuthRepository())
       {
-        client = _repo.GetById(context.ClientId);
+        client = _repo.FindClient(context.ClientId);
       }
 
-      if (client.Result.ApplicationType == ApplicationTypes.NativeConfidential)
+      if (client.ApplicationType == ApplicationTypes.NativeConfidential)
       {
         if (string.IsNullOrWhiteSpace(clientSecret))
         {
           context.SetError("invalid_clientId", "Client secret should be sent.");
           return Task.FromResult<object>(null);
         }
-        if (client.Result.Password != MainHelper.GetHash(clientSecret))
+        if (client.Secret != MainHelper.GetHash(clientSecret))
         {
           context.SetError("invalid_clientId", "Client secret is invalid.");
           return Task.FromResult<object>(null);
         }
       }
 
-      if (!client.Result.Active)
+      if (!client.Active)
       {
         context.SetError("invalid_clientId", "Client is inactive.");
         return Task.FromResult<object>(null);
       }
 
-      context.OwinContext.Set("as:clientAllowedOrigin", client.Result.AllowedOrigin);
-      context.OwinContext.Set("as:clientRefreshTokenLifeTime", client.Result.RefreshTokenLifeTime.ToString());
+      context.OwinContext.Set("as:clientAllowedOrigin", client.AllowedOrigin);
+      context.OwinContext.Set("as:clientRefreshTokenLifeTime", client.RefreshTokenLifeTime.ToString());
 
       context.Validated();
       return Task.FromResult<object>(null);

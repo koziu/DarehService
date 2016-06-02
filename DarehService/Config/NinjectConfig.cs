@@ -25,7 +25,7 @@ namespace DarehService.API.Config
     private static void RegisterServices(KernelBase kernel)
     {
       kernel.Bind<IAuthRepository>().To<AuthRepository>();
-      kernel.Bind<ICrudRepository<Client>>().To<ClientRepositoriy>();
+      kernel.Bind<ICrudRepository<UserModel>>().To<ClientRepositoriy>();
     }
 
   }

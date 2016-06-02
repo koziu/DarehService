@@ -9,7 +9,7 @@ using DarehService.API.Repositiries.Interfaces;
 
 namespace DarehService.API.Repositiries
 {
-  public class ClientRepositoriy : ICrudRepository<Client>
+  public class ClientRepositoriy : ICrudRepository<UserModel>
   {
     private AuthContext _context;
 
@@ -22,32 +22,32 @@ namespace DarehService.API.Repositiries
       throw new NotImplementedException();
     }
 
-    public IEnumerable<Client> GetAll()
+    public IEnumerable<UserModel> GetAll()
     {
       return TestData.ClientTestData.Clients;
     }
 
-    public async Task<Client> GetById(string id)
-    {
-      return await _context.Clients.FindAsync(id);
-    }
+    //public async Task<UserModel> GetById(string id)
+    //{
+    //  return await _context.UserModels.FindAsync(id);
+    //}
 
-    public async Task<Client> Get(Client entity)
-    {
-      return await _context.Clients.FindAsync(entity);
-    }
+    //public async Task<UserModel> Get(UserModel entity)
+    //{
+    //  return await _context.UserModels.FindAsync(entity);
+    //}
 
-    public Task<bool> Insert(Client entity)
-    {
-      throw new NotImplementedException();
-    }
-
-    public Task<bool> Update(Client entity)
+    public Task<bool> Insert(UserModel entity)
     {
       throw new NotImplementedException();
     }
 
-    public Task<bool> Delete(Client entity)
+    public Task<bool> Update(UserModel entity)
+    {
+      throw new NotImplementedException();
+    }
+
+    public Task<bool> Delete(UserModel entity)
     {
       throw new NotImplementedException();
     }

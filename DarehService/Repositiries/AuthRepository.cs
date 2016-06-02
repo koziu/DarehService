@@ -1,9 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Threading.Tasks;
-using System.Web;
 using DarehService.API.DAL;
 using DarehService.API.Models;
 using DarehService.API.Repositiries.Interfaces;
@@ -20,7 +18,7 @@ namespace DarehService.API.Repositiries
     public AuthRepository()
     {
       _context = new AuthContext();
-      _userManager = new UserManager<IdentityUser>(new UserStore<IdentityUser>(_context));
+       _userManager = new UserManager<IdentityUser>(new UserStore<IdentityUser>(_context));
     }
 
     public void Dispose()
@@ -29,14 +27,14 @@ namespace DarehService.API.Repositiries
       _userManager.Dispose();
     }
 
-    public async Task<IdentityResult> RegisterUser(UserModel userModel)
+    public async Task<IdentityResult> RegisterUser(UserModel client)
     {
       var user = new IdentityUser
       {
-        UserName = userModel.UserName
+        UserName = client.UserName,
       };
 
-      var result = await _userManager.CreateAsync(user, userModel.Password);
+      var result = await _userManager.CreateAsync(user, client.Password);
 
       return result;
     }
@@ -48,16 +46,19 @@ namespace DarehService.API.Repositiries
       return user;
     }
 
-    public async Task<IdentityUser> FindUserById(string id)
+    public Client FindClient(string clientId)
     {
-      var user = await _userManager.FindByIdAsync(id);
+      var client =  _context.Clients.Find(clientId);
 
-      return user;
+      return client;
     }
 
     public async Task<bool> AddRefreshToken(RefreshToken refreshToken)
     {
-      var existingRefreshToken = await _context.RefreshTokens.SingleOrDefaultAsync(r => r.Subject == refreshToken.Subject && r.ClientId == refreshToken.ClientId);
+      var existingRefreshToken =
+        await
+          _context.RefreshTokens.SingleOrDefaultAsync(
+            r => r.Subject == refreshToken.Subject && r.ClientId == refreshToken.ClientId);
       if (existingRefreshToken != null)
       {
         var result = await RemoveRefreshToken(existingRefreshToken);

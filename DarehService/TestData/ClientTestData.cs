@@ -32,9 +32,9 @@ namespace DarehService.API.TestData
       PostalCode = "47-330"
     };
 
-    public static List<Client> Clients = new List<Client>
+    public static List<UserModel> Clients = new List<UserModel>
     {
-      new Client
+      new UserModel
       {
         Id = new Guid("9275DCE8-6E42-49B7-A5B1-9C7E7A204665").ToString(),
         FirstName = "Rafał",
@@ -46,7 +46,7 @@ namespace DarehService.API.TestData
         LastLogOnDate = DateTime.Now,
         PhoneNumber = "555666999"
       },
-       new Client
+       new UserModel
       {
         Id = new Guid("05DD1051-96AE-4403-A50F-A090698A5F7D").ToString(),
         FirstName = "Mateusz",

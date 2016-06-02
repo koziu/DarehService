@@ -46,11 +46,5 @@ namespace DarehService.API
 
     }
 
-    private static StandardKernel CreateKernel()
-    {
-      var kernel = new StandardKernel();
-      kernel.Load(Assembly.GetExecutingAssembly());
-      return kernel;
-    }
   }
 }

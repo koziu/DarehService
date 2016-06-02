@@ -37,8 +37,8 @@ namespace DarehService.API.Provides
           Id = MainHelper.GetHash(refreshTokenId),
           ClientId = clientid,
           Subject = context.Ticket.Identity.Name,
-          IssuedUtc = DateTime.UtcNow,
-          ExpiresUtc = DateTime.UtcNow.AddMinutes(Convert.ToDouble(refreshTokenLifeTime))
+          IssuedUtc = DateTime.Now,
+          ExpiresUtc = DateTime.Now.AddSeconds(Convert.ToDouble(refreshTokenLifeTime))
         };
 
         context.Ticket.Properties.IssuedUtc = token.IssuedUtc;

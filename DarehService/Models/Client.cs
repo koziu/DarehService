@@ -1,25 +1,26 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Linq;
+using System.Web;
+using DarehService.API.Models.Enums;
+using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace DarehService.API.Models
 {
-  public class Client : UserModel
+  public class Client
   {
+    [Key]
+    public string Id { get; set; }
     [Required]
-    public string FirstName { get; set; }
-
-    public string SecondName { get; set; }
-
+    public string Secret { get; set; }
     [Required]
-    public string Surname { get; set; }
-
-    [Required]
-    public Address CorrespondenceAddress { get; set; }
-
-    [Required]
-    public Address RegisteredAddress { get; set; }
-
-    public DateTime RegisterDate { get; set; }
-    public DateTime LastLogOnDate { get; set; }
+    [MaxLength(100)]
+    public string Name { get; set; }
+    public ApplicationTypes ApplicationType { get; set; }
+    public bool Active { get; set; }
+    public int RefreshTokenLifeTime { get; set; }
+    [MaxLength(100)]
+    public string AllowedOrigin { get; set; }
   }
 }

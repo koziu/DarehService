@@ -3,7 +3,7 @@ namespace DarehService.API.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class refreshTokenAdd1 : DbMigration
+    public partial class ClientsAdd : DbMigration
     {
         public override void Up()
         {

@@ -11,9 +11,9 @@ namespace DarehService.API.Repositiries.Interfaces
 {
   public interface IAuthRepository : IDisposable
   {
-    Task<IdentityResult> RegisterUser(UserModel userModel);
-    Task<IdentityUser> FindUser(string userName, string password);
-    Task<IdentityUser> FindUserById(string id);
+    Task<IdentityResult> RegisterUser(UserModel client);
+    Task<IdentityUser> FindUser(string userName, string password);    
+    Client FindClient(string id);    
     Task<bool> AddRefreshToken(RefreshToken refreshToken);
     Task<bool> RemoveRefreshToken(string refreshTokenId);
     Task<bool> RemoveRefreshToken(RefreshToken refreshToken);

@@ -7,13 +7,13 @@ namespace DarehService.API.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.0-30225")]
-    public sealed partial class refreshTokenAdd1 : IMigrationMetadata
+    public sealed partial class Initial : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(refreshTokenAdd1));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(Initial));
         
         string IMigrationMetadata.Id
         {
-            get { return "201605300926182_refreshTokenAdd1"; }
+            get { return "201606021206149_Initial"; }
         }
         
         string IMigrationMetadata.Source

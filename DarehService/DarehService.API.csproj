@@ -234,17 +234,29 @@
     <Compile Include="Conventers\Interfaces\IConventer.cs" />
     <Compile Include="DAL\AuthContext.cs" />
     <Compile Include="Helpers\MainHelper.cs" />
-    <Compile Include="Migrations\201605300801010_refreshTokenAdd.cs" />
-    <Compile Include="Migrations\201605300801010_refreshTokenAdd.Designer.cs">
-      <DependentUpon>201605300801010_refreshTokenAdd.cs</DependentUpon>
+    <Compile Include="Migrations\201606020916281_user-u.cs" />
+    <Compile Include="Migrations\201606020916281_user-u.Designer.cs">
+      <DependentUpon>201606020916281_user-u.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201605300926182_refreshTokenAdd1.cs" />
-    <Compile Include="Migrations\201605300926182_refreshTokenAdd1.Designer.cs">
-      <DependentUpon>201605300926182_refreshTokenAdd1.cs</DependentUpon>
+    <Compile Include="Migrations\201606021120219_ClientsAdd.cs" />
+    <Compile Include="Migrations\201606021120219_ClientsAdd.Designer.cs">
+      <DependentUpon>201606021120219_ClientsAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201606021201509_ChangeModel.cs" />
+    <Compile Include="Migrations\201606021201509_ChangeModel.Designer.cs">
+      <DependentUpon>201606021201509_ChangeModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201606021206149_Initial.cs" />
+    <Compile Include="Migrations\201606021206149_Initial.Designer.cs">
+      <DependentUpon>201606021206149_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201606021251568_Initial1.cs" />
+    <Compile Include="Migrations\201606021251568_Initial1.Designer.cs">
+      <DependentUpon>201606021251568_Initial1.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Adress.cs" />
-    <Compile Include="Models\Client.cs" />
+    <Compile Include="Models\UserModel.cs" />
     <Compile Include="Models\ClientOrders.cs" />
     <Compile Include="Models\Enums\ApplicationTypes.cs" />
     <Compile Include="Models\Enums\OrderStatus.cs" />
@@ -252,7 +264,7 @@
     <Compile Include="Models\Offer.cs" />
     <Compile Include="Models\Order.cs" />
     <Compile Include="Models\RefreshToken.cs" />
-    <Compile Include="Models\UserModel.cs" />
+    <Compile Include="Models\Client.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Provides\DarehAuthorizationServerProvider.cs" />
     <Compile Include="Provides\DarehRefreshTokenProvider.cs" />
@@ -282,11 +294,20 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201605300801010_refreshTokenAdd.resx">
-      <DependentUpon>201605300801010_refreshTokenAdd.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201606020916281_user-u.resx">
+      <DependentUpon>201606020916281_user-u.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201605300926182_refreshTokenAdd1.resx">
-      <DependentUpon>201605300926182_refreshTokenAdd1.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201606021120219_ClientsAdd.resx">
+      <DependentUpon>201606021120219_ClientsAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201606021201509_ChangeModel.resx">
+      <DependentUpon>201606021201509_ChangeModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201606021206149_Initial.resx">
+      <DependentUpon>201606021206149_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201606021251568_Initial1.resx">
+      <DependentUpon>201606021251568_Initial1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
