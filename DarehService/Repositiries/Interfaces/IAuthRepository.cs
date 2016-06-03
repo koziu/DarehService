@@ -19,6 +19,8 @@ namespace DarehService.API.Repositiries.Interfaces
     Task<bool> RemoveRefreshToken(RefreshToken refreshToken);
     Task<RefreshToken> FindRefreshToken(string refreshTokenId);
     List<RefreshToken> GetAllRefreshTokens();
-
+    Task<IdentityUser> FindAsync(UserLoginInfo loginInfo);
+    Task<IdentityResult> CreateAsync(IdentityUser user);
+    Task<IdentityResult> AddLoginAsync(string userId, UserLoginInfo login);
   }
 }

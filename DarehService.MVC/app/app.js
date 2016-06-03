@@ -1,5 +1,5 @@
 ﻿
-var app = angular.module('DarehServiceApp', ['ngRoute', 'LocalStorageModule', 'angular-loading-bar']);
+var app = angular.module("DarehServiceApp", ["ngRoute", "LocalStorageModule", "angular-loading-bar"]);
 
 app.config(function($routeProvider) {
 
@@ -22,8 +22,29 @@ app.config(function($routeProvider) {
     controller: "clientsController",
     templateUrl: "/app/Views/client.html"
   });
+  $routeProvider.when("/refresh", {
+    controller: "refreshController",
+    templateUrl: "/app/views/refresh.html"
+  });
+
+  $routeProvider.when("/tokens", {
+    controller: "tokensManagerController",
+    templateUrl: "/app/views/tokens.html"
+  });
+
+  $routeProvider.when("/associate", {
+    controller: "associateController",
+    templateUrl: "/app/views/associate.html"
+  });
 
   $routeProvider.otherwise({ redirectTo: "/home" });
+});
+
+var serviceBase = "http://localhost:53988/";
+
+app.constant("ngAuthSettings", {
+  apiServiceBaseUri: serviceBase,
+  clientId: "ngAuthApp"
 });
 
 app.config(function($httpProvider) {

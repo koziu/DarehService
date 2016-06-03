@@ -211,19 +211,26 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="app\app.js" />
+    <Content Include="app\Controllers\associateController.js" />
     <Content Include="app\Controllers\clientController.js" />
     <Content Include="app\Controllers\homeController.js" />
     <Content Include="app\Controllers\indexController.js" />
     <Content Include="app\Controllers\loginController.js" />
+    <Content Include="app\Controllers\refreshController.js" />
     <Content Include="app\Controllers\signupController.js" />
+    <Content Include="app\Controllers\tokensManagerController.js" />
     <Content Include="app\Models\Clients.js" />
     <Content Include="app\Services\authInterceptorService.js" />
     <Content Include="app\Services\authService.js" />
     <Content Include="app\Services\clientsService.js" />
+    <Content Include="app\Services\tokensManagerService.js" />
+    <Content Include="app\Views\associate.html" />
     <Content Include="app\Views\client.html" />
     <Content Include="app\Views\home.html" />
     <Content Include="app\Views\login.html" />
+    <Content Include="app\Views\refresh.html" />
     <Content Include="app\Views\signup.html" />
+    <Content Include="app\Views\tokens.html" />
     <Content Include="Content\css\bootstrap.css" />
     <Content Include="Content\css\bootstrap.min.css" />
     <Content Include="Content\css\loading-bar.css" />

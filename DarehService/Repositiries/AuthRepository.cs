@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
+using System.Security.AccessControl;
 using System.Threading.Tasks;
 using DarehService.API.DAL;
 using DarehService.API.Models;
@@ -99,6 +100,27 @@ namespace DarehService.API.Repositiries
     public List<RefreshToken> GetAllRefreshTokens()
     {
       return _context.RefreshTokens.ToList();
+    }
+
+    public async Task<IdentityUser> FindAsync(UserLoginInfo loginInfo)
+    {
+      var user = await _userManager.FindAsync(loginInfo);
+
+      return user;
+    }
+
+    public async Task<IdentityResult> CreateAsync(IdentityUser user)
+    {
+      var result = await _userManager.CreateAsync(user);
+
+      return result;
+    }
+
+    public async Task<IdentityResult> AddLoginAsync(string userId, UserLoginInfo login)
+    {
+      var result = await _userManager.AddLoginAsync(userId, login);
+
+      return result;
     }
   }
 }

@@ -1,8 +1,5 @@
 ﻿<div class="row">
-    <div class="col-md-2">
-        &nbsp;
-    </div>
-    <div class="col-md-8">
+    <div class="col-md-12">
         <table class="table table-striped table-bordered table-hover">
             <thead>
                 <tr>
@@ -11,6 +8,11 @@
                     <th>Nazwisko</th>
                     <th>Email</th>
                     <th>Telefon</th>
+                    <th>Ulica</th>
+                    <th>Numer domu</th>
+                    <th>Miasto</th>
+                    <th>Kod pocztowy</th>
+                    <th>Kraj</th>
                 </tr>
             </thead>
             <tbody>
@@ -19,7 +21,12 @@
                     <td>{{client.firstName}}</td>
                     <td>{{client.surname}}</td>
                     <td>{{client.email}}</td>
-                    <td>{{client.phone}}</td>
+                    <td>{{client.phoneNumber}}</td>
+                    <td>ul.{{client.correspondenceAddress.streetName}}</td>
+                    <td>{{client.correspondenceAddress.localNumber}}/{{client.correspondenceAddress.streetNumber}}</td>
+                    <td>{{client.correspondenceAddress.city}}</td>
+                    <td>{{client.correspondenceAddress.postalCode}}</td>
+                    <td>{{client.correspondenceAddress.country}}</td>
                 </tr>
             </tbody>
         </table>
