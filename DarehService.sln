@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DarehService.API", "DarehSe
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DarehService.MVC", "DarehService.MVC\DarehService.MVC.csproj", "{AB518AEA-E3AB-4704-902D-0A689F63096A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DarehService.ResourceServer", "DarehService.ResourceServer\DarehService.ResourceServer.csproj", "{288F3920-D846-4AE4-89CA-D36400227D8A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{AB518AEA-E3AB-4704-902D-0A689F63096A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AB518AEA-E3AB-4704-902D-0A689F63096A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AB518AEA-E3AB-4704-902D-0A689F63096A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{288F3920-D846-4AE4-89CA-D36400227D8A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{288F3920-D846-4AE4-89CA-D36400227D8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{288F3920-D846-4AE4-89CA-D36400227D8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{288F3920-D846-4AE4-89CA-D36400227D8A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
